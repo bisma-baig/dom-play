@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charset = "UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width">
+        <title>Dom Play</title>
+        <style>
+		* {padding:0; margin:0;}
+		html {background-color:rgb(24, 22, 22);}
+		body {
+			font-family: Cursive ,Arial, Helvetica, sans-serif;
+			max-width:960px; /* keeps from getting too large on wide screen */
+			width:90%; /* shrink to fit screen */
+			margin:auto; /* center in html element */
+			background-color:rgb(100, 22, 29);
+			padding:20px;
+			min-height:100%; /* keeps from getting too large on wide screen */
+			}
+		img.flexible {
+			float:right;
+			display:inline-block;
+			padding:20px;
+			max-width:300px; /* actual size of image */
+			width:33%; /* approximate size taken on screen in maximum view */
+		}
+		p {margin:10px;}
+		h1,h2,h4,h5,h6{
+			font-weight:bold;
+			margin:10px;
+			}
+		h1.masthead {margin-top:0;}
+		footer {
+			text-align:center;
+			clear:both; /* ride below all items */
+			}
+		nav{
+			text-align:center; /* centers the nav */
+		}
+		
+		nav ul {
+				list-style:none; /* removes the bullets */
+			}
+		nav ul li
+			{
+				display:inline-block; /* makes horizontal, but able to declare margins */
+				margin:0 2%; /* margin left-right, gets smaller as necessary */
+			}
+		nav a:hover{
+			text-decoration: none;
+		}	
+    </style>
+   
+    <!--[if ltIE9]>
+       <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+     <![endif]-->
+</head>
+<body>
+	<header>
+		<h1 class="masthead">DOM play</h1>
+		
+	</header>
+	<h2 id="greeting">I solemnly swear i am up to no good!</h2>
+    <main>
+	 <header><h3>A JavaScript example by Bisma Baig</h3></header>
+	 <p>This is a web page where we used data attributes to identify characters when you click on character.</p>
+
+	  <img id="pic"src="https://m.media-amazon.com/images/I/714i6yXhYzL._AC_SY679_.jpg" alt="Picture of Me!" class="flexible" />
+     </main>
+        
+        </style>
+    </head>
+         <body>
+             <h1>Harry Potter: Prisoner of Azkaban Script. </h1>
+                <div id="play">
+                    <p><span data-actor="harry">Harry: What's this rubbish?</span></p>
+                    <p><span data-actor="fred">Fred: Rubbish he says. That there's the secret to our success.</span></p>
+                    <p><span data-actor="george">George: It's a wrench giving it to you,believe me.</span></p>
+                    <p><span data-actor="fred">Fred: But we've decided your need's greater than ours. George, if you will...</span></p>
+                    <p><span data-actor="george">George: I solemnly swear that I am up to no good.</span></p>
+                        <p>George touches his wand to the parchment and INTRICATE INK LINES surface in the fiber of the paper, spread like
+                        veins. Harry reads the CURIOUS WORDS at the top:</p>
+                    <p><span data-actor="harry">Harry: 'Messrs Moony, Wormtail, Padfoot and Prongs are proud to present The Marauder's Map'...?</span></p>
+                    <p><span data-actor="george">George: Ah... Moony, Wormtail, Padfoot and Prongs. We owe them so much..</span></p>
+                    <p><span data-actor="harry">Harry: Hang on. This is Hogwarts! And that... No. Is that really...
+                        <p>Harry points to a small MOVING DOT labeled "Dumbledore.</p>
+                    <p><span data-actor="fred">Fred: Dumbledore.</span></p>
+                    <p><span data-actor="george">George: In his study.</span></p>
+                    <p><span data-actor="fred">Fred: Pacing</span></p>
+                    <p><span data-actor="george">George: He does that alot</span></p>
+                    <p><span data-actor="harry">Harry: You mean, this map shows...</span></p>
+                    <p><span data-actor="fred">Fred:Everyone.</span></p>
+                    <p><span data-actor="harry">Harry: Everyone?</span></p>
+                    <p><span data-actor="george">George: Everyone.</span></p>
+                    <p><span data-actor="fred">Fred: Where they are.</span></p>
+                    <p><span data-actor="george">George: What they're doing.</span></p>
+                    <p><span data-actor="fred">Fred: Every minute.</span></p>
+                    <p><span data-actor="george">George: Of every day.</span></p>
+                    <p><span data-actor="harry">Harry: Brilliant! where'd you get it?</span></p>
+
+                        </span></p>
+                </div>
+                <script>
+                    const spans = document.querySelectorAll('div#play span');
+
+                    for(const mySpan of spans){
+                     mySpan.addEventListener('click',function(ev){
+                        //alert(mySpan.dataset.actor);
+                        highlightActor(mySpan.dataset.actor);
+                     });
+                }
+
+        function highlightActor(myActor){
+
+            for (const mySpan of spans){
+
+                if(myActor == mySpan.dataset.actor){
+                    mySpan.style.backgroundColor = 'navy';
+                }else{
+                    mySpan.style.backgroundColor='white';
+            } 
+                }
+        }   
+        
+        </script>
+    </body>
+</html> 
